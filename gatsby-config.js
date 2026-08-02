@@ -10,7 +10,7 @@ module.exports = {
     title: `SD Negeri Sukasari 5`,
     titleTemplate: `%s | SD Negeri Sukasari 5`,
     description:
-      `Website resmi SD Negeri Sukasari 5 — mencetak generasi cerdas, berkarakter, dan berakhlak mulia. Informasi PPDB, berita, prestasi, dan kegiatan sekolah.`,
+      `Website resmi SD Negeri Sukasari 5 — mencetak generasi cerdas, berkarakter, dan berakhlak mulia. Informasi SPMB, berita, prestasi, dan kegiatan sekolah.`,
     siteUrl,
     author: `SD Negeri Sukasari 5`,
     lang: `id`,

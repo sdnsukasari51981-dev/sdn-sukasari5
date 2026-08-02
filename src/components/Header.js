@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import { AnimatePresence, motion } from "framer-motion"
 import { HiMenu, HiX, HiChevronDown } from "react-icons/hi"
 
@@ -38,9 +39,15 @@ const Header = () => {
     >
       <div className="max-w-6xl mx-auto px-5 md:px-8 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-3 group" aria-label="Beranda SDN Sukasari 5">
-          <span className="grid place-items-center w-11 h-11 rounded-full bg-ink text-sun font-display text-lg shadow-pin group-hover:animate-wiggle">
-            S5
-          </span>
+          <StaticImage
+            src="../images/logo-sekolah.png"
+            alt="Logo SD Negeri Sukasari 5"
+            className="w-11 h-11 group-hover:animate-wiggle"
+            imgClassName="object-contain"
+            placeholder="blurred"
+            width={44}
+            height={44}
+          />
           <span className="font-display leading-tight">
             <span className="block text-ink text-base md:text-lg">SD Negeri</span>
             <span className="block text-merah text-sm md:text-base -mt-1">Sukasari 5</span>
@@ -81,9 +88,7 @@ const Header = () => {
               )}
             </div>
           ))}
-          <Link to="/ppdb" className="btn-primary ml-3 !py-2.5 !px-5 text-sm">
-            PPDB {new Date().getFullYear()}
-          </Link>
+          
         </nav>
 
         {/* Tombol menu mobile */}
@@ -136,11 +141,7 @@ const Header = () => {
                   )}
                 </li>
               ))}
-              <li className="pt-2">
-                <Link to="/ppdb" onClick={() => setOpen(false)} className="btn-primary w-full">
-                  Daftar PPDB {new Date().getFullYear()}
-                </Link>
-              </li>
+              
             </ul>
           </motion.nav>
         )}

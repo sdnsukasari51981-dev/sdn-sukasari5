@@ -21,11 +21,11 @@ const jadwal = [
   { tahap: "Daftar Ulang", tanggal: "21 – 25 Juni" },
 ]
 
-const PPDBPage = () => (
+const SPMBPage = () => (
   <Layout>
     <SEO
-      title="PPDB — Penerimaan Peserta Didik Baru"
-      pathname="/ppdb"
+      title="SPMB — Penerimaan Peserta Didik Baru"
+      pathname="/spmb"
       description="Informasi lengkap syarat, jadwal, dan alur pendaftaran Penerimaan Peserta Didik Baru SD Negeri Sukasari 5."
     />
 
@@ -97,4 +97,4 @@ const PPDBPage = () => (
   </Layout>
 )
 
-export default PPDBPage
+export default SPMBPage

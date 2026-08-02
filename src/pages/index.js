@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Reveal from "../components/Reveal"
@@ -13,6 +14,7 @@ import {
   HiOutlineSparkles,
   HiOutlineAcademicCap,
   HiArrowRight,
+  HiOutlineChatAlt2,
 } from "react-icons/hi"
 
 const programs = [
@@ -49,7 +51,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO
         title="Beranda"
-        description="Website resmi SD Negeri Sukasari 5 — informasi PPDB, profil sekolah, berita, prestasi, dan kegiatan belajar-mengajar."
+        description="Website resmi SD Negeri Sukasari 5 — informasi SPMB, profil sekolah, berita, prestasi, dan kegiatan belajar-mengajar."
       />
 
       {/* HERO */}
@@ -71,9 +73,6 @@ const IndexPage = ({ data }) => {
               melalui pembelajaran yang menyenangkan dan penuh makna.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/ppdb" className="btn-primary">
-                Daftar PPDB <HiArrowRight />
-              </Link>
               <Link to="/profil" className="btn-secondary">
                 Kenali Sekolah Kami
               </Link>
@@ -82,17 +81,20 @@ const IndexPage = ({ data }) => {
 
           <Reveal delay={0.15} className="relative">
             <div className="report-card rotate-2">
-              <div className="rounded-2xl bg-gradient-to-br from-sky-light via-sun-light to-daun-light aspect-[4/3] grid place-items-center">
-                <span className="font-display text-ink/40 text-center px-6">
-                  Foto gedung / kegiatan sekolah
-                  <br />
-                  <span className="text-xs font-body">(ganti dengan foto asli di /src/images)</span>
-                </span>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+                <StaticImage
+                  src="../images/gedung-sekolah.jpeg"
+                  alt="Gedung SD Negeri Sukasari 5"
+                  className="w-full h-full"
+                  imgClassName="object-cover"
+                  placeholder="blurred"
+                  layout="constrained"
+                />
               </div>
             </div>
             <div className="report-card absolute -bottom-8 -left-8 -rotate-3 w-44 hidden sm:block">
               <p className="font-display text-sm text-ink">"Belajar itu menyenangkan!"</p>
-              <p className="text-xs text-ink/50 mt-1">— Siswa Kelas 4</p>
+              <p className="text-xs text-ink/50 mt-1">— SDN Sukasari 5</p>
             </div>
           </Reveal>
         </div>
@@ -100,9 +102,9 @@ const IndexPage = ({ data }) => {
         {/* Statistik */}
         <Reveal delay={0.2} className="max-w-5xl mx-auto px-5 md:px-8 mt-16 md:mt-24">
           <div className="report-card grid grid-cols-2 md:grid-cols-4 gap-8 py-8">
-            <StatCounter value={420} suffix="+" label="Siswa Aktif" />
-            <StatCounter value={28} label="Guru & Staf" />
-            <StatCounter value={12} label="Ekstrakurikuler" />
+            <StatCounter value={421} suffix="" label="Siswa Aktif" />
+            <StatCounter value={26} label="Guru & Staf" />
+            <StatCounter value={6} label="Ekstrakurikuler" />
             <StatCounter value={45} suffix=" thn" label="Berdiri Sejak" />
           </div>
         </Reveal>
@@ -132,6 +134,72 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
+
+      <TornEdge className="w-full h-6 text-daun-light" />
+
+      {/* SAMBUTAN KEPALA SEKOLAH */}
+      <section className="bg-daun-light py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-5 md:px-8">
+          <Reveal className="max-w-xl mb-14">
+            <span className="eyebrow mb-3">Sambutan</span>
+            <h2 className="section-title">Sambutan Kepala Sekolah</h2>
+          </Reveal>
+          <div className="grid md:grid-cols-[280px_1fr] gap-10 items-start">
+            <Reveal>
+              <div className="report-card -rotate-2 max-w-xs mx-auto md:mx-0">
+                <div className="rounded-2xl overflow-hidden aspect-[3/4]">
+                  <StaticImage
+                    src="../images/kepala-sekolah.jpeg"
+                    alt="Wawat Tustiawati, S.Pd., M.M. — Kepala SD Negeri Sukasari 5"
+                    className="w-full h-full"
+                    imgClassName="object-cover"
+                    placeholder="blurred"
+                    layout="constrained"
+                  />
+                </div>
+                <div className="text-center pt-4">
+                  <p className="font-display text-ink">Wawat Tustiawati, S.Pd., M.M.</p>
+                  <p className="text-xs text-ink/50 mt-1">Kepala SD Negeri Sukasari 5</p>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="report-card">
+                <HiOutlineChatAlt2 className="text-4xl text-daun mb-4" aria-hidden="true" />
+                <p className="text-ink/70 leading-relaxed mb-4">
+                  Assalamu'alaikum warahmatullahi wabarakatuh. Puji syukur kita panjatkan
+                  kehadirat Allah SWT atas segala rahmat dan karunia-Nya, sehingga website resmi
+                  SD Negeri Sukasari 5 ini dapat hadir untuk Bapak/Ibu dan Ananda sekalian.
+                </p>
+                <p className="text-ink/70 leading-relaxed mb-4">
+                  Website ini kami hadirkan sebagai jendela informasi sekaligus jembatan
+                  komunikasi antara sekolah, orang tua, siswa, dan masyarakat luas. Melalui
+                  platform ini, kami berharap Bapak/Ibu dapat lebih mudah mengikuti
+                  perkembangan program pembelajaran, kegiatan, prestasi, hingga informasi
+                  Penerimaan Peserta Didik Baru di SD Negeri Sukasari 5.
+                </p>
+                <p className="text-ink/70 leading-relaxed mb-4">
+                  Kami berkomitmen untuk terus menghadirkan pendidikan yang berkualitas,
+                  menyenangkan, dan berkarakter bagi seluruh peserta didik sejalan dengan
+                  semangat Kurikulum Merdeka dan nilai-nilai akhlak mulia yang kami junjung
+                  tinggi. Dukungan dan kerja sama dari orang tua serta seluruh pemangku
+                  kepentingan sangat kami harapkan demi mewujudkan generasi yang cerdas,
+                  kreatif, dan berakhlak mulia.
+                </p>
+                <p className="text-ink/70 leading-relaxed mb-6">
+                  Akhir kata, selamat menjelajahi website SD Negeri Sukasari 5. Semoga
+                  bermanfaat dan mempererat silaturahmi kita semua. Wassalamu'alaikum
+                  warahmatullahi wabarakatuh.
+                </p>
+                <p className="font-display text-ink">Wawat Tustiawati, S.Pd., M.M.</p>
+                <p className="text-sm text-ink/50">Kepala SD Negeri Sukasari 5</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <TornEdge className="w-full h-6 text-chalk" />
 
       {/* BERITA TERBARU */}
       {posts.length > 0 && (
@@ -164,7 +232,7 @@ const IndexPage = ({ data }) => {
         </section>
       )}
 
-      {/* CTA PPDB */}
+      {/* CTA SPMB */}
       <section className="bg-ink py-20 relative overflow-hidden">
         <BlobSun className="absolute -bottom-20 -right-10 w-72 h-72 text-white/5" />
         <Reveal className="max-w-3xl mx-auto px-5 md:px-8 text-center relative">
@@ -175,8 +243,8 @@ const IndexPage = ({ data }) => {
             Wujudkan pendidikan terbaik untuk buah hati Anda bersama SD Negeri Sukasari 5.
             Kuota terbatas, daftarkan sekarang.
           </p>
-          <Link to="/ppdb" className="btn-primary">
-            Info & Formulir PPDB <HiArrowRight />
+          <Link to="/spmb" className="btn-primary">
+            Info & Formulir SPMB <HiArrowRight />
           </Link>
         </Reveal>
       </section>
