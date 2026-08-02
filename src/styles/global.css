@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    @apply bg-chalk text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink;
+  }
+  /* Fokus keyboard yang jelas untuk aksesibilitas */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 3px solid #F4B942;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Signature element: kartu bergaya "rapor / kartu indeks sekolah" dengan
+     sudut terlipat, mengambil kosakata visual dari kartu laporan siswa. */
+  .report-card {
+    @apply relative bg-paper rounded-card shadow-card border border-ink/5 p-6;
+  }
+  .report-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    background: linear-gradient(135deg, transparent 50%, rgba(27,42,74,0.08) 50%);
+    border-top-right-radius: 1.25rem;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-merah;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-merah px-6 py-3
+      font-display text-white shadow-pin transition-transform duration-200
+      hover:-translate-y-0.5 hover:bg-merah/90 active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink px-6 py-3
+      font-display text-ink transition-colors duration-200 hover:bg-ink hover:text-chalk;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl text-ink leading-tight;
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(circle, rgba(27,42,74,0.10) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+}
