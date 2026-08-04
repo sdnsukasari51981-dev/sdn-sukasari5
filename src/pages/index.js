@@ -33,7 +33,7 @@ const programs = [
   {
     icon: HiOutlineUserGroup,
     title: "Ekstrakurikuler Beragam",
-    desc: "Pramuka, seni tari, futsal, hingga sains club untuk mengasah bakat di luar kelas.",
+    desc: "Marching Band, Taekwondo, Pencak Silat, Marawis, Pramuka, Seni Tari, Futsal, hingga coding dari Ruang Guru untuk mengasah bakat di luar kelas.",
     badge: "bg-daun-light text-daun",
   },
   {
@@ -176,7 +176,7 @@ const IndexPage = ({ data }) => {
                   komunikasi antara sekolah, orang tua, siswa, dan masyarakat luas. Melalui
                   platform ini, kami berharap Bapak/Ibu dapat lebih mudah mengikuti
                   perkembangan program pembelajaran, kegiatan, prestasi, hingga informasi
-                  Penerimaan Peserta Didik Baru di SD Negeri Sukasari 5.
+                  Sistem Penerimaan Murid Baru di SD Negeri Sukasari 5.
                 </p>
                 <p className="text-ink/70 leading-relaxed mb-4">
                   Kami berkomitmen untuk terus menghadirkan pendidikan yang berkualitas,

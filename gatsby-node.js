@@ -16,6 +16,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       tanggal: Date @dateformat
       kategori: String
       gambar: File @fileByRelativePath
+      tautan: String
     }
   `);
 };
@@ -50,6 +51,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           fields {
             slug
           }
+          frontmatter {
+            tautan
+          }
         }
       }
     }
@@ -62,15 +66,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allMarkdownRemark.nodes;
 
-  posts.forEach((post) => {
-    createPage({
-      path: post.fields.slug,
-      component: beritaTemplate,
-      context: {
-        slug: post.fields.slug,
-      },
+  posts
+    .filter((post) => !post.frontmatter.tautan)
+    .forEach((post) => {
+      createPage({
+        path: post.fields.slug,
+        component: beritaTemplate,
+        context: {
+          slug: post.fields.slug,
+        },
+      });
     });
-  });
 };
 
 /**

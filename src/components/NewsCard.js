@@ -1,12 +1,21 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { HiOutlineCalendar, HiArrowRight } from "react-icons/hi"
+import { HiOutlineCalendar, HiArrowRight, HiOutlineExternalLink } from "react-icons/hi"
 
-const NewsCard = ({ title, date, excerpt, slug, image, category }) => {
+const NewsCard = ({ title, date, excerpt, slug, image, category, externalUrl }) => {
   const img = image && getImage(image)
+  const isExternal = Boolean(externalUrl)
+  const CardTag = isExternal ? "a" : Link
+  const linkProps = isExternal
+    ? { href: externalUrl, target: "_blank", rel: "noopener noreferrer" }
+    : { to: slug }
+
   return (
-    <Link to={slug} className="group block report-card overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+    <CardTag
+      {...linkProps}
+      className="group block report-card overflow-hidden hover:-translate-y-1 transition-transform duration-300"
+    >
       {img ? (
         <GatsbyImage image={img} alt={title} className="rounded-2xl mb-4 aspect-[4/3]" />
       ) : (
@@ -24,10 +33,18 @@ const NewsCard = ({ title, date, excerpt, slug, image, category }) => {
           <HiOutlineCalendar /> {date}
         </span>
         <span className="flex items-center gap-1 text-merah font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-          Baca <HiArrowRight />
+          {isExternal ? (
+            <>
+              Baca di situs resmi <HiOutlineExternalLink />
+            </>
+          ) : (
+            <>
+              Baca <HiArrowRight />
+            </>
+          )}
         </span>
       </div>
-    </Link>
+    </CardTag>
   )
 }
 

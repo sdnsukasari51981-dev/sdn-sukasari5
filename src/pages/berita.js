@@ -38,6 +38,7 @@ const BeritaPage = ({ data }) => {
                     slug={post.fields.slug}
                     category={post.frontmatter.kategori}
                     image={post.frontmatter.gambar && getImage(post.frontmatter.gambar)}
+                    externalUrl={post.frontmatter.tautan}
                   />
                 </Reveal>
               ))}
@@ -62,6 +63,7 @@ export const query = graphql`
           judul
           tanggal(formatString: "DD MMMM YYYY", locale: "id")
           kategori
+          tautan
           gambar {
             childImageSharp {
               gatsbyImageData(width: 500, height: 375, placeholder: BLURRED)
