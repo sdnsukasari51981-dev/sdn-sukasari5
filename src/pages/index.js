@@ -237,15 +237,20 @@ const IndexPage = ({ data }) => {
         <BlobSun className="absolute -bottom-20 -right-10 w-72 h-72 text-white/5" />
         <Reveal className="max-w-3xl mx-auto px-5 md:px-8 text-center relative">
           <h2 className="font-display text-3xl md:text-4xl text-chalk mb-4">
-            Penerimaan Peserta Didik Baru Telah Dibuka
+            Rumah Administrasi SD Negeri Sukasari 5
           </h2>
           <p className="text-chalk/70 mb-8">
-            Wujudkan pendidikan terbaik untuk buah hati Anda bersama SD Negeri Sukasari 5.
-            Kuota terbatas, daftarkan sekarang.
+            Wujudkan administrasi terbaik untuk pendataan bersama SD Negeri Sukasari 5.
+            Menjaga integritas dan konsistensi data, berbagi dan kolaborasi.
           </p>
-          <Link to="/spmb" className="btn-primary">
-            Info & Formulir SPMB <HiArrowRight />
-          </Link>
+          <a
+            href="https://linktr.ee/Sukasari5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            Rumah Adm Sukma <HiArrowRight />
+          </a>
         </Reveal>
       </section>
     </Layout>
