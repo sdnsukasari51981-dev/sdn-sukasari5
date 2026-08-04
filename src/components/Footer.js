@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { HiOutlineLocationMarker, HiOutlinePhone, HiOutlineMail } from "react-icons/hi"
-import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa"
+import { FaInstagram, FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa"
 
 const Footer = () => {
   const { site } = useStaticQuery(graphql`
@@ -46,17 +46,20 @@ const Footer = () => {
           </div>
           <p className="text-chalk/70 max-w-sm text-sm leading-relaxed">
             Mencetak generasi yang cerdas, berkarakter, dan berakhlak mulia sejak bangku
-            sekolah dasar — melalui pembelajaran yang menyenangkan dan bermakna.
+            sekolah dasar melalui pembelajaran yang menyenangkan dan bermakna.
           </p>
           <div className="flex gap-3 mt-5">
-            <a href={social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="grid place-items-center w-10 h-10 rounded-full bg-white/10 hover:bg-merah transition-colors">
+            <a href="https://www.instagram.com/sukmatangerang/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="grid place-items-center w-10 h-10 rounded-full bg-white/10 hover:bg-merah transition-colors">
               <FaInstagram />
             </a>
-            <a href={social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="grid place-items-center w-10 h-10 rounded-full bg-white/10 hover:bg-merah transition-colors">
+            <a href="https://www.facebook.com/pages/SDN%20Sukasari%205/633656966658114/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="grid place-items-center w-10 h-10 rounded-full bg-white/10 hover:bg-merah transition-colors">
               <FaFacebook />
             </a>
-            <a href={social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="grid place-items-center w-10 h-10 rounded-full bg-white/10 hover:bg-merah transition-colors">
+            <a href="https://www.youtube.com/@sdnsukasari5415" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="grid place-items-center w-10 h-10 rounded-full bg-white/10 hover:bg-merah transition-colors">
               <FaYoutube />
+            </a>
+            <a href="https://www.tiktok.com/@sukma.tangerang" target="_blank" rel="noopener noreferrer" aria-label="Tiktok" className="grid place-items-center w-10 h-10 rounded-full bg-white/10 hover:bg-merah transition-colors">
+              <FaTiktok />
             </a>
           </div>
         </div>
@@ -65,7 +68,6 @@ const Footer = () => {
           <h3 className="font-display text-sun mb-4 text-sm tracking-wide uppercase">Tautan Cepat</h3>
           <ul className="space-y-2 text-sm text-chalk/80">
             <li><Link to="/profil" className="hover:text-sun">Profil Sekolah</Link></li>
-            <li><Link to="/spmb" className="hover:text-sun">SPMB</Link></li>
             <li><Link to="/berita" className="hover:text-sun">Berita</Link></li>
             <li><Link to="/galeri" className="hover:text-sun">Galeri</Link></li>
             <li><Link to="/prestasi" className="hover:text-sun">Prestasi</Link></li>

@@ -20,9 +20,9 @@ module.exports = {
       youtube: `https://youtube.com/@sdnsukasari5`,
     },
     contact: {
-      address: `Jl. Sukasari No. 5, Kota (sesuaikan alamat lengkap)`,
-      phone: `(022) 000-0000`,
-      email: `info@sdnsukasari5.sch.id`,
+      address: `Jalan Moh. Yamin Nomor 1, Kelurahan Babakan, Kecamatan Tangerang, Kota Tangerang, Provinsi Banten`,
+      phone: `081953716561 (Admin)`,
+      email: `sdnsukasari51981@gmail.com`,
     },
   },
   plugins: [
