@@ -1,0 +1,51 @@
+{
+  "name": "sdn-sukasari-5",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Website resmi SD Negeri Sukasari 5 — dibangun dengan Gatsby JS.",
+  "author": "SD Negeri Sukasari 5",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "audit": "npm audit --omit=dev",
+    "format": "prettier --write \"src/**/*.js\""
+  },
+  "dependencies": {
+    "gatsby": "^5.13.7",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-postcss": "^6.13.1",
+    "gatsby-plugin-react-helmet": "^6.13.1",
+    "gatsby-plugin-robots-txt": "^1.8.0",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-plugin-sitemap": "^6.13.1",
+    "gatsby-plugin-nprogress": "^5.13.1",
+    "gatsby-plugin-offline": "^6.13.2",
+    "gatsby-remark-images": "^7.13.1",
+    "gatsby-remark-copy-linked-files": "^6.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-remark": "^6.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^5.2.1",
+    "framer-motion": "^11.2.10"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "prettier": "^3.3.1",
+    "tailwindcss": "^3.4.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
