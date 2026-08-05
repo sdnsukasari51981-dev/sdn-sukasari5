@@ -5,11 +5,16 @@ import Reveal from "../components/Reveal"
 import { HiOutlineIdentification } from "react-icons/hi"
 
 const identitas = [
+<<<<<<< HEAD
   ["NPSN", "20606442"],
+=======
+  ["NPSN", "20xxxxxx"],
+>>>>>>> 6aea6f9b26c392d218981fec3fbfb7a7affe672d
   ["Status", "Negeri"],
   ["Akreditasi", "A (Sangat Baik)"],
   ["Jenjang", "Sekolah Dasar (SD)"],
   ["Kurikulum", "Kurikulum Merdeka"],
+<<<<<<< HEAD
   ["Alamat", "Jalan Moh. Yamin Nomor 1, Kelurahan Babakan, Kecamatan Tangerang, Kota Tangerang, Provinsi Banten"],
 ]
 
@@ -24,6 +29,16 @@ const sejarah = [
   { tahun: "2024", teks: "Tiim Marching Band Gita Sukma SDN Sukasari 5 meraih prestasi membanggakan mewakili Provinsi Banten, membawa pulang medali emas untuk kategori ensambel/CG, perak untuk parade street marching, perak untuk parade marching show, serta perunggu untuk pianika ensambel dan konser." },
   { tahun: "2025", teks: "Berdasarkan data Dapodik (Kemendikdasmen), sekolah ini tercatat memiliki 14 ruang kelas, 2 perpustakaan, dan daya listrik 24.999 watt dari PLN pada periode 2024/2025 semester 2, dengan rasio siswa per rombongan belajar sekitar 34,33." },
   { tahun: "2025", teks: "Sekolah terus menjalankan Kurikulum Merdeka dan berstatus sekolah penggerak (sesuai info dari halaman resmi sekolah)." },
+=======
+  ["Alamat", "Jl. Sukasari No. 5"],
+]
+
+const sejarah = [
+  { tahun: "1979", teks: "SD Negeri Sukasari 5 resmi didirikan untuk melayani pendidikan dasar di wilayah Sukasari." },
+  { tahun: "1998", teks: "Renovasi besar gedung sekolah dan penambahan ruang kelas untuk menampung lebih banyak siswa." },
+  { tahun: "2015", teks: "Meraih akreditasi A dan mulai mengembangkan program ekstrakurikuler unggulan." },
+  { tahun: "2023", teks: "Menerapkan Kurikulum Merdeka secara penuh di seluruh tingkatan kelas." },
+>>>>>>> 6aea6f9b26c392d218981fec3fbfb7a7affe672d
 ]
 
 const ProfilPage = () => (
@@ -36,8 +51,13 @@ const ProfilPage = () => (
           <span className="eyebrow mb-3">Profil Sekolah</span>
           <h1 className="section-title mb-4">Mengenal SD Negeri Sukasari 5</h1>
           <p className="text-ink/60 max-w-2xl mx-auto">
+<<<<<<< HEAD
             Sekolah dasar negeri yang berkomitmen membentuk generasi cerdas,
             berkarakter, dan siap menghadapi masa depan sejak tahun 1981.
+=======
+            Lembaga pendidikan dasar negeri yang berkomitmen membentuk generasi cerdas,
+            berkarakter, dan siap menghadapi masa depan sejak tahun 1979.
+>>>>>>> 6aea6f9b26c392d218981fec3fbfb7a7affe672d
           </p>
         </Reveal>
       </div>
@@ -65,7 +85,11 @@ const ProfilPage = () => (
         <Reveal>
           <h2 className="font-display text-2xl text-ink mb-4">Sejarah Singkat</h2>
           <p className="text-ink/70 leading-relaxed mb-10">
+<<<<<<< HEAD
             Berdiri sejak tahun 1981, SD Negeri Sukasari 5 telah menjadi bagian dari
+=======
+            Berdiri sejak tahun 1979, SD Negeri Sukasari 5 telah menjadi bagian dari
+>>>>>>> 6aea6f9b26c392d218981fec3fbfb7a7affe672d
             perjalanan pendidikan masyarakat sekitar selama lebih dari empat dekade.
             Dengan dukungan tenaga pendidik profesional dan fasilitas yang terus
             diperbarui, sekolah ini konsisten menghadirkan pembelajaran berkualitas
