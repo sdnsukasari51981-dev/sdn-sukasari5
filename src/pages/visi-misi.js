@@ -5,14 +5,30 @@ import Reveal from "../components/Reveal"
 import { HiOutlineFlag, HiOutlineCheckCircle } from "react-icons/hi"
 
 const misi = [
-  "Menyelenggarakan pembelajaran aktif, kreatif, dan menyenangkan berbasis Kurikulum Merdeka.",
-  "Menanamkan nilai keimanan, kejujuran, dan gotong royong dalam setiap kegiatan sekolah.",
-  "Mengembangkan potensi, minat, dan bakat siswa melalui program ekstrakurikuler yang beragam.",
-  "Membangun kemitraan yang erat antara sekolah, orang tua, dan masyarakat sekitar.",
-  "Menciptakan lingkungan belajar yang aman, bersih, sehat, dan ramah anak.",
+  "Menanamkan nilai-nilai keimanan, ketakwaan, dan akhlak mulia melalui pembiasaan ibadah, kegiatan keagamaan, dan teladan dalam kehidupan sehari-hari.",
+  "Membangun semangat kewargaan dengan menumbuhkan sikap saling menghargai, toleransi, dan gotong royong dalam lingkungan sekolah yang inklusif.",
+  "Mengembangkan kemampuan bernalar kritis melalui pembelajaran berbasis proyek, kegiatan literasi dan pemecahan masalah kontekstual.",
+  "Mendorong kreativitas dan inovasi murid dengan memberi ruang untuk berekspresi dan menciptakan karya yang bermanfaat bagi diri sendiri dan lingkungan.",
+  "Menumbuhkan kolaborasi antar murid dan warga sekolah untuk mewujudkan iklim belajar yang sehat, inklusif, dan berwawasan lingkungan.",
+  "Melatih kemandirian murid melalui kegiatan yang menumbuhkan tanggung jawab, disiplin, dan pengambilan keputusan secara mandiri.",
+  "Membangun budaya sekolah yang berkarakter, sehat, bersih, dan ramah lingkungan.",
+  "Melibatkan seluruh warga sekolah dan orang tua dalam menciptakan ekosistem pendidikan yang mendukung perkembangan profil lulusan.",
+  "Melibatkan warga sekolah, orang tua dan masyarakat sebagai mitra sekolah dalam program peduli lingkungan."
 ]
 
-const nilai = ["Jujur", "Disiplin", "Peduli", "Kreatif", "Mandiri", "Gotong Royong"]
+const Tujuan = [
+  "Membentuk murid yang beriman, bertakwa kepada Tuhan Yang Maha Esa, dan berakhlak mulia melalui pembiasaan ibadah, kegiatan keagamaan, dan keteladanan dalam kehidupan sehari-hari.",
+  "Menumbuhkan semangat kewargaan dalam diri murid melalui sikap saling menghargai, toleransi, dan gotong royong di lingkungan sekolah yang inklusif dan harmonis.",
+  "Mengembangkan kemampuan bernalar kritis murid melalui pembelajaran berbasis proyek, literasi, serta pemecahan masalah nyata yang kontekstual dan relevan dengan kehidupan.",
+  "Mendorong kreativitas dan inovasi murid dengan menyediakan ruang yang aman dan terbuka untuk berekspresi serta menciptakan karya yang bermanfaat bagi diri sendiri dan lingkungan.",
+  "Menumbuhkan budaya kolaborasi yang sehat dan produktif antar murid, guru, dan seluruh warga sekolah untuk menciptakan iklim belajar yang nyaman, inklusif dan berwawasan lingkungan.",
+  "Melatih sikap mandiri pada murid melalui kegiatan yang menumbuhkan rasa tanggung jawab, disiplin, serta kemampuan mengambil keputusan secara dewasa dan mandiri.",
+  "Mewujudkan budaya sekolah yang sehat, bersih, berkarakter, dan ramah lingkungan melalui pembiasaan hidup sehat dan pelibatan seluruh warga sekolah.",
+  "Menciptakan ekosistem pendidikan yang kolaboratif dengan melibatkan seluruh warga sekolah dan orang tua dalam mendukung pembentukan karakter dan profil lulusan yang ideal dalam kehidupan sehari-hari.",
+  "Membiasakan warga sekolah serta menguatkan kemitraan dengan orang tua dan masyarakat untuk aktif dalam menjaga kebersihan, kelestarian, dan keberlanjutan lingkungan sekolah dan sekitarnya."
+]
+
+const nilai = ["Keimanan dan Ketaqwaan", "Kewargaan", "Penalaran Kritis", "Kreativitas", "Kolaborasi", "Kesehatan", "Kemandirian", "Komunikasi"]
 
 const VisiMisiPage = () => (
   <Layout>
@@ -32,8 +48,7 @@ const VisiMisiPage = () => (
             <HiOutlineFlag className="mx-auto mb-4 text-sun" size={32} />
             <span className="eyebrow !text-sun mb-3">Visi</span>
             <p className="font-display text-xl md:text-2xl leading-snug max-w-2xl mx-auto">
-              "Terwujudnya peserta didik yang cerdas, berkarakter, mandiri, dan
-              berwawasan lingkungan berlandaskan iman dan takwa."
+              "Mewujudkan Murid yang Memiliki Delapan Dimensi Profil lulusan dan peduli lingkungan."
             </p>
           </div>
         </Reveal>
@@ -53,7 +68,21 @@ const VisiMisiPage = () => (
         </div>
 
         <Reveal>
-          <h2 className="font-display text-2xl text-ink mb-6 text-center">Nilai-Nilai Utama</h2>
+          <h2 className="font-display text-2xl text-ink mb-6 text-center">Tujuan</h2>
+        </Reveal>
+        <div className="grid sm:grid-cols-2 gap-5 mb-16">
+          {Tujuan.map((item, i) => (
+            <Reveal key={item} delay={i * 0.08}>
+              <div className="report-card flex gap-3 h-full">
+                <HiOutlineCheckCircle className="text-daun shrink-0 mt-0.5" size={22} />
+                <p className="text-ink/75 text-sm leading-relaxed">{item}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
+          <h2 className="font-display text-2xl text-ink mb-6 text-center">8 Dimensi Profil Lulusan</h2>
           <div className="flex flex-wrap justify-center gap-3">
             {nilai.map((n) => (
               <span

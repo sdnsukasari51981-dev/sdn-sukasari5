@@ -15,6 +15,7 @@ const identitas = [
 
 const sejarah = [
   { tahun: "1981", teks: "SD Negeri Sukasari 5 resmi didirikan untuk melayani pendidikan dasar di wilayah Sukasari." },
+  { tahun: "1984", teks: "Legalitas sekolah dikukuhkan lewat SK Pendirian Sekolah Nomor 840/Psd/1984, tertanggal 23 Agustus 1984 (data Dapodik Kemendikdasmen)." },
   { tahun: "1998", teks: "Renovasi besar gedung sekolah dan penambahan ruang kelas untuk menampung lebih banyak siswa." },
   { tahun: "2015", teks: "Meraih akreditasi A dan mulai mengembangkan program ekstrakurikuler unggulan." },
   { tahun: "2016", teks: "Pemerintah Kota Tangerang menganggarkan dan melaksanakan proyek pembangunan gedung baru SDN Sukasari 4 & 5 di Jalan Sukasari, di tengah dinamika penyelesaian status lahan." },
@@ -24,6 +25,7 @@ const sejarah = [
   { tahun: "2024", teks: "Tiim Marching Band Gita Sukma SDN Sukasari 5 meraih prestasi membanggakan mewakili Provinsi Banten, membawa pulang medali emas untuk kategori ensambel/CG, perak untuk parade street marching, perak untuk parade marching show, serta perunggu untuk pianika ensambel dan konser." },
   { tahun: "2025", teks: "Berdasarkan data Dapodik (Kemendikdasmen), sekolah ini tercatat memiliki 14 ruang kelas, 2 perpustakaan, dan daya listrik 24.999 watt dari PLN pada periode 2024/2025 semester 2, dengan rasio siswa per rombongan belajar sekitar 34,33." },
   { tahun: "2025", teks: "Sekolah terus menjalankan Kurikulum Merdeka dan berstatus sekolah penggerak (sesuai info dari halaman resmi sekolah)." },
+  { tahun: "2026", teks: "SD Negeri Sukasari 5 memang secara rutin masuk 20 besar SD paling berprestasi se-Indonesia menurut data Puspresnas, media lokal Cakra Banten melaporkan bahwa di bawah kepemimpinan Wawat Tustiawati, SDN Sukasari 5 meraih posisi 12 SD terbaik nasional 2026." },
 ]
 
 const ProfilPage = () => (
