@@ -21,7 +21,7 @@ const sejarah = [
   { tahun: "2017", teks: "Proses perpindahan dan penggunaan gedung baru secara resmi mulai aktif dilakukan setelah tahap pembangunan selesai." },
   { tahun: "2021", teks: "Sempat ada penyesuaian kegiatan internal sekolah termasuk program Adiwiyata akibat penataan ulang dan kepindahan lanjutan di tahun ajaran tersebut." },
   { tahun: "2023", teks: "Menerapkan Kurikulum Merdeka secara penuh di seluruh tingkatan kelas." },
-  { tahun: "2024", teks: "Tim Marching Band Gita Sukma SDN Sukasari 5 meraih prestasi membanggakan mewakili Provinsi Banten, membawa pulang medali emas untuk kategori ensambel/CG, perak untuk parade street marching, perak untuk parade marching show, serta perunggu untuk pianika ensambel dan konser." },
+  { tahun: "2024", teks: "Tiim Marching Band Gita Sukma SDN Sukasari 5 meraih prestasi membanggakan mewakili Provinsi Banten, membawa pulang medali emas untuk kategori ensambel/CG, perak untuk parade street marching, perak untuk parade marching show, serta perunggu untuk pianika ensambel dan konser." },
   { tahun: "2025", teks: "Berdasarkan data Dapodik (Kemendikdasmen), sekolah ini tercatat memiliki 14 ruang kelas, 2 perpustakaan, dan daya listrik 24.999 watt dari PLN pada periode 2024/2025 semester 2, dengan rasio siswa per rombongan belajar sekitar 34,33." },
   { tahun: "2025", teks: "Sekolah terus menjalankan Kurikulum Merdeka dan berstatus sekolah penggerak (sesuai info dari halaman resmi sekolah)." },
 ]
