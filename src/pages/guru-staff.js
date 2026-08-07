@@ -20,8 +20,8 @@ const kelompok = [
     anggota: [
       { nama: "Rudi Mustafa, S.Pd.", peran: "Guru Kelas VI A", nip: "197110282002121006" },
       { nama: "Siti Jubaedah, S.Pd.", peran: "Guru Kelas VI B", nip: "198501032025212010" },
-      { nama: "Nurhikmah, S.Pd.", peran: "Guru Kelas V B", nip: "198001012022212013" },
       { nama: "Siti Mandasari, S.Pd.", peran: "Guru Kelas V A", nip: "199212232022212003" },
+      { nama: "Nurhikmah, S.Pd.", peran: "Guru Kelas V B", nip: "198001012022212013" },
       { nama: "Mudiani Setiawati, S.Pd.", peran: "Guru Kelas IV A", nip: "198206182008012005" },
       { nama: "Rita Rosita Rodiah, S.Pd.", peran: "Guru Kelas IV B", nip: "198804152022212008" },
       { nama: "Ma'mun Murod, S.Pd.", peran: "Guru Kelas III A", nip: "197206142014091003" },

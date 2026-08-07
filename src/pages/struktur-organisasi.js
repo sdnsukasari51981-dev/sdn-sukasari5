@@ -19,6 +19,8 @@ const kelompok = [
     anggota: [
       { nama: "Rudi Mustafa, S.Pd.", jabatan: "Guru Kelas VI A", nip: "197110282002121006" },
       { nama: "Siti Jubaedah, S.Pd.", jabatan: "Guru Kelas VI B", nip: "198501032025212010" },
+      { nama: "Siti Mandasari, S.Pd.", jabatan: "Guru Kelas V A", nip: "199212232022212003" },
+      { nama: "Nurhikmah, S.Pd.", jabatan: "Guru Kelas V B", nip: "198001012022212013" },
       { nama: "Mudiani Setiawati, S.Pd.", jabatan: "Guru Kelas IV A", nip: "198206182008012005" },
       { nama: "Rita Rosita Rodiah, S.Pd.", jabatan: "Guru Kelas IV B", nip: "198804152022212008" },
       { nama: "Ma'mun Murod, S.Pd.", jabatan: "Guru Kelas III A", nip: "197206142014091003" },
@@ -27,8 +29,6 @@ const kelompok = [
       { nama: "Nadia Femi Saputri, S.Pd.", jabatan: "Guru Kelas II B", nip: "197805292022212002" },
       { nama: "Yati Hartati, S.Pd.", jabatan: "Guru Kelas I A", nip: "197107052005012006" },
       { nama: "Nurhayati, S.Pd.", jabatan: "Guru Kelas I B", nip: "197906052014092001" },
-      { nama: "Siti Mandasari, S.Pd.", jabatan: "Guru Kelas V A", nip: "199212232022212003" },
-      { nama: "Nurhikmah, S.Pd.", jabatan: "Guru Kelas V B", nip: "198001012022212013" },
     ],
   },
   {
