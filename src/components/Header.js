@@ -24,12 +24,18 @@ const navLinks = [
 const Header = () => {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mobileDropdown, setMobileDropdown] = useState(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  const closeMobileMenu = () => {
+    setOpen(false)
+    setMobileDropdown(null)
+  }
 
   return (
     <header
@@ -97,7 +103,7 @@ const Header = () => {
           className="lg:hidden grid place-items-center w-11 h-11 rounded-full border-2 border-ink text-ink"
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => (open ? closeMobileMenu() : setOpen(true))}
         >
           {open ? <HiX size={22} /> : <HiMenu size={22} />}
         </button>
@@ -115,33 +121,76 @@ const Header = () => {
             aria-label="Navigasi mobile"
           >
             <ul className="px-5 py-4 space-y-1">
-              {navLinks.map((item) => (
+              {navLinks.map((item) => {
+                const isSubOpen = mobileDropdown === item.to
+                return (
                 <li key={item.to}>
-                  <Link
-                    to={item.to}
-                    onClick={() => setOpen(false)}
-                    className="block px-3 py-3 rounded-xl font-display text-ink hover:bg-sky-light"
-                  >
-                    {item.label}
-                  </Link>
+                  {item.dropdown ? (
+                    <div
+                      className={`flex items-center rounded-xl ${isSubOpen ? "bg-sky-light/60" : ""}`}
+                    >
+                      <Link
+                        to={item.to}
+                        onClick={closeMobileMenu}
+                        className="flex-1 block px-3 py-3 font-display text-ink"
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setMobileDropdown((cur) => (cur === item.to ? null : item.to))
+                        }
+                        aria-expanded={isSubOpen}
+                        aria-label={`${isSubOpen ? "Tutup" : "Buka"} submenu ${item.label}`}
+                        className="grid place-items-center w-11 h-11 shrink-0 text-ink/60 hover:text-merah"
+                      >
+                        <motion.span
+                          animate={{ rotate: isSubOpen ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="grid place-items-center"
+                        >
+                          <HiChevronDown size={18} />
+                        </motion.span>
+                      </button>
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.to}
+                      onClick={closeMobileMenu}
+                      className="block px-3 py-3 rounded-xl font-display text-ink hover:bg-sky-light"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                   {item.dropdown && (
-                    <ul className="pl-4 pb-2 space-y-1">
-                      {item.dropdown.map((sub) => (
-                        <li key={sub.to}>
-                          <Link
-                            to={sub.to}
-                            onClick={() => setOpen(false)}
-                            className="block px-3 py-2 rounded-lg text-sm text-ink/70 hover:text-merah"
-                          >
-                            {sub.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    <AnimatePresence initial={false}>
+                      {isSubOpen && (
+                        <motion.ul
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2, ease: "easeInOut" }}
+                          className="pl-4 overflow-hidden"
+                        >
+                          {item.dropdown.map((sub) => (
+                            <li key={sub.to}>
+                              <Link
+                                to={sub.to}
+                                onClick={closeMobileMenu}
+                                className="block px-3 py-2 mt-1 rounded-lg text-sm text-ink/70 hover:text-merah hover:bg-sky-light"
+                              >
+                                {sub.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
                   )}
                 </li>
-              ))}
-              
+                )
+              })}
             </ul>
           </motion.nav>
         )}
