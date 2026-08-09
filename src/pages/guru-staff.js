@@ -51,9 +51,9 @@ const kelompok = [
     title: "Tenaga Kependidikan",
     warna: "sun",
     anggota: [
-      { nama: "Abu Bakar Sidik", peran: "Operator Sekolah", nip: "198204222025211024" },
-      { nama: "Muhammad Ar Rafi Ramadhan", peran: "Perpustakaan" },
-      { nama: "Gunawan", peran: "Satpam", nip: "197210122025211045" },
+      { nama: "Abu Bakar Sidik", peran: "Operator Sekolah", nip: "198204222025211024", foto: "pak-sidik.png" },
+      { nama: "Muhammad Ar Rafi Ramadhan", peran: "Perpustakaan", foto: "pak-rafi.png" },
+      { nama: "Gunawan", peran: "Satpam", nip: "197210122025211045", foto: "pak-gun.png" },
       { nama: "Mawan", peran: "Penjaga Malam" },
       { nama: "Maulana Muhamadin", peran: "Penjaga Sekolah", nip: "119210242025211109" },
       { nama: "Reno Dinata", peran: "Penjaga Sekolah", nip: "198303052025211133" },
