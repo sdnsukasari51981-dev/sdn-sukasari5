@@ -5,19 +5,27 @@ import Reveal from "../components/Reveal"
 import { HiOutlineIdentification } from "react-icons/hi"
 
 const identitas = [
-  ["NPSN", "20xxxxxx"],
+  ["NPSN", "20606442"],
   ["Status", "Negeri"],
   ["Akreditasi", "A (Sangat Baik)"],
   ["Jenjang", "Sekolah Dasar (SD)"],
   ["Kurikulum", "Kurikulum Merdeka"],
-  ["Alamat", "Jl. Sukasari No. 5"],
+  ["Alamat", "Jalan Moh. Yamin Nomor 1, Kelurahan Babakan, Kecamatan Tangerang, Kota Tangerang, Provinsi Banten"],
 ]
 
 const sejarah = [
-  { tahun: "1979", teks: "SD Negeri Sukasari 5 resmi didirikan untuk melayani pendidikan dasar di wilayah Sukasari." },
+  { tahun: "1981", teks: "SD Negeri Sukasari 5 resmi didirikan untuk melayani pendidikan dasar di wilayah Sukasari." },
+  { tahun: "1984", teks: "Legalitas sekolah dikukuhkan lewat SK Pendirian Sekolah Nomor 840/Psd/1984, tertanggal 23 Agustus 1984 (data Dapodik Kemendikdasmen)." },
   { tahun: "1998", teks: "Renovasi besar gedung sekolah dan penambahan ruang kelas untuk menampung lebih banyak siswa." },
   { tahun: "2015", teks: "Meraih akreditasi A dan mulai mengembangkan program ekstrakurikuler unggulan." },
+  { tahun: "2016", teks: "Pemerintah Kota Tangerang menganggarkan dan melaksanakan proyek pembangunan gedung baru SDN Sukasari 4 & 5 di Jalan Sukasari, di tengah dinamika penyelesaian status lahan." },
+  { tahun: "2017", teks: "Proses perpindahan dan penggunaan gedung baru secara resmi mulai aktif dilakukan setelah tahap pembangunan selesai." },
+  { tahun: "2021", teks: "Sempat ada penyesuaian kegiatan internal sekolah termasuk program Adiwiyata akibat penataan ulang dan kepindahan lanjutan di tahun ajaran tersebut." },
   { tahun: "2023", teks: "Menerapkan Kurikulum Merdeka secara penuh di seluruh tingkatan kelas." },
+  { tahun: "2024", teks: "Tiim Marching Band Gita Sukma SDN Sukasari 5 meraih prestasi membanggakan mewakili Provinsi Banten, membawa pulang medali emas untuk kategori ensambel/CG, perak untuk parade street marching, perak untuk parade marching show, serta perunggu untuk pianika ensambel dan konser." },
+  { tahun: "2025", teks: "Berdasarkan data Dapodik (Kemendikdasmen), sekolah ini tercatat memiliki 14 ruang kelas, 2 perpustakaan, dan daya listrik 24.999 watt dari PLN pada periode 2024/2025 semester 2, dengan rasio siswa per rombongan belajar sekitar 34,33." },
+  { tahun: "2025", teks: "Sekolah terus menjalankan Kurikulum Merdeka dan berstatus sekolah penggerak (sesuai info dari halaman resmi sekolah)." },
+  { tahun: "2026", teks: "SD Negeri Sukasari 5 memang secara rutin masuk 20 besar SD paling berprestasi se-Indonesia menurut data Puspresnas, media lokal Cakra Banten melaporkan bahwa di bawah kepemimpinan Wawat Tustiawati, SDN Sukasari 5 meraih posisi 12 SD terbaik nasional 2026." },
 ]
 
 const ProfilPage = () => (
@@ -30,8 +38,8 @@ const ProfilPage = () => (
           <span className="eyebrow mb-3">Profil Sekolah</span>
           <h1 className="section-title mb-4">Mengenal SD Negeri Sukasari 5</h1>
           <p className="text-ink/60 max-w-2xl mx-auto">
-            Lembaga pendidikan dasar negeri yang berkomitmen membentuk generasi cerdas,
-            berkarakter, dan siap menghadapi masa depan sejak tahun 1979.
+            Sekolah dasar negeri yang berkomitmen membentuk generasi cerdas,
+            berkarakter, dan siap menghadapi masa depan sejak tahun 1981.
           </p>
         </Reveal>
       </div>
@@ -59,7 +67,7 @@ const ProfilPage = () => (
         <Reveal>
           <h2 className="font-display text-2xl text-ink mb-4">Sejarah Singkat</h2>
           <p className="text-ink/70 leading-relaxed mb-10">
-            Berdiri sejak tahun 1979, SD Negeri Sukasari 5 telah menjadi bagian dari
+            Berdiri sejak tahun 1981, SD Negeri Sukasari 5 telah menjadi bagian dari
             perjalanan pendidikan masyarakat sekitar selama lebih dari empat dekade.
             Dengan dukungan tenaga pendidik profesional dan fasilitas yang terus
             diperbarui, sekolah ini konsisten menghadirkan pembelajaran berkualitas
