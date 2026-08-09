@@ -29,9 +29,9 @@ const kelompok = [
       { nama: "Ma'mun Murod, S.Pd.", peran: "Guru Kelas III A", nip: "197206142014091003", foto: "pak-mamun.png" },
       { nama: "Rahmaningrum, S.Pd.", peran: "Guru Kelas III B", nip: "198904262022212008", foto: "bu-arum.png" },
       { nama: "Siti Iptika, S.Pd.", peran: "Guru Kelas II A", nip: "199001012025212069", foto: "bu-tika.png" },
-      { nama: "Nadia Femi Saputri, S.Pd.", peran: "Guru Kelas II B", nip: "197805292022212002" },
-      { nama: "Yati Hartati, S.Pd.", peran: "Guru Kelas I A", nip: "197107052005012006" },
-      { nama: "Nurhayati, S.Pd.", peran: "Guru Kelas I B", nip: "197906052014092001" },
+      { nama: "Nadia Femi Saputri, S.Pd.", peran: "Guru Kelas II B", nip: "197805292022212002", foto: "bu-nadia.png" },
+      { nama: "Yati Hartati, S.Pd.", peran: "Guru Kelas I A", nip: "197107052005012006", foto: "bu-yati.png" },
+      { nama: "Nurhayati, S.Pd.", peran: "Guru Kelas I B", nip: "197906052014092001", foto: "bu-nur.png" },
     ],
   },
   {
