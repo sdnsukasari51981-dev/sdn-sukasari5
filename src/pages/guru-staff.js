@@ -54,9 +54,9 @@ const kelompok = [
       { nama: "Abu Bakar Sidik", peran: "Operator Sekolah", nip: "198204222025211024", foto: "pak-sidik.png" },
       { nama: "Muhammad Ar Rafi Ramadhan", peran: "Perpustakaan", foto: "pak-rafi.png" },
       { nama: "Gunawan", peran: "Satpam", nip: "197210122025211045", foto: "pak-gun.png" },
-      { nama: "Mawan", peran: "Penjaga Malam" },
-      { nama: "Maulana Muhamadin", peran: "Penjaga Sekolah", nip: "119210242025211109" },
-      { nama: "Reno Dinata", peran: "Penjaga Sekolah", nip: "198303052025211133" },
+      { nama: "Mawan", peran: "Penjaga Malam", foto: "pak-mawan.png" },
+      { nama: "Maulana Muhamadin", peran: "Penjaga Sekolah", nip: "119210242025211109", foto: "pak-maul.png" },
+      { nama: "Reno Dinata", peran: "Penjaga Sekolah", nip: "198303052025211133", foto: "pak-reno.png" },
     ],
   },
   {
