@@ -70,6 +70,7 @@ const kelompok = [
       { nama: "Fajrya Apriyanti, ST", peran: "Pelatih Taekwondo", foto: "bu-rya.png" },
       { nama: "Aqliyah Lutvy Triandi", peran: "Pelatih Tari", foto: "bu-lutfy.png" },
       { nama: "Andreas An Hadi", peran: "Pelatih Silat", foto: "pak-andreas.png" },
+      { nama: "Aziz Priana, S.Pd.", peran: "Pelatih Futsal", foto: "pak-aziz.png" },
     ],
   },
 ]
