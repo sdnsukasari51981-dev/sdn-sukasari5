@@ -53,6 +53,40 @@ npm run build
 npm run serve   # pratinjau hasil build di http://localhost:9000
 ```
 
+## 📖 Buku Tamu Online (Dinas & Umum)
+
+Menu **Buku Tamu** (`/buku-tamu`) berisi dua halaman: **Buku Tamu Dinas**
+(`/buku-tamu/dinas`) dan **Buku Tamu Umum** (`/buku-tamu/umum`). Tiap halaman
+punya form isian dan tabel publik hasil isian.
+
+Kolom: Hari/Tanggal · Nama · Jabatan · Sasaran · Masalah · Saran-saran · Tanda Tangan
+(+ kolom No). Hari/Tanggal diisi otomatis oleh server (zona WIB), tanda tangan
+digambar langsung di layar (mouse/sentuh). Kolom Masalah & Saran bersifat opsional.
+
+**Cara kerja:** form mengirim data ke Netlify Function
+(`netlify/functions/buku-tamu.mjs`) yang menyimpannya di **Netlify Blobs**
+(tanpa database atau layanan tambahan). Tabel mengambil data dari fungsi yang
+sama sehingga langsung terlihat publik.
+
+**Perlu diketahui**
+- Fitur ini hanya berjalan di Netlify. Untuk mencoba di lokal gunakan
+  `npx netlify dev` (bukan `gatsby develop`).
+- Setelah menambah dependensi `@netlify/blobs`, jalankan `npm install` sekali
+  agar `package-lock.json` ikut diperbarui, lalu commit.
+- Perlindungan spam: honeypot, validasi sisi server, dan batas 8 kiriman/jam
+  per alamat IP (disimpan sebagai hash).
+
+**Moderasi (menghapus entri tidak pantas)**
+1. Netlify → Site settings → Environment variables → tambahkan `ADMIN_TOKEN`
+   (string acak panjang), lalu deploy ulang.
+2. Ambil `id` entri dari respons `GET /.netlify/functions/buku-tamu?kategori=dinas`
+   lalu hapus:
+   ```bash
+   curl -X DELETE -H "Authorization: Bearer TOKEN_ANDA" \
+     "https://sdnsukasari5.sch.id/.netlify/functions/buku-tamu?id=dinas/ID_ENTRI"
+   ```
+   Entri juga bisa dihapus manual lewat Netlify → Blobs → `buku-tamu`.
+
 ## 📝 Mengelola Konten
 
 ### Menambah berita

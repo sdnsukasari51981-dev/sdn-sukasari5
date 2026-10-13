@@ -17,26 +17,27 @@
     "format": "prettier --write \"src/**/*.js\""
   },
   "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "framer-motion": "^11.2.10",
     "gatsby": "^5.13.7",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-nprogress": "^5.13.1",
+    "gatsby-plugin-offline": "^6.13.2",
     "gatsby-plugin-postcss": "^6.13.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-plugin-sitemap": "^6.13.1",
-    "gatsby-plugin-nprogress": "^5.13.1",
-    "gatsby-plugin-offline": "^6.13.2",
-    "gatsby-remark-images": "^7.13.1",
     "gatsby-remark-copy-linked-files": "^6.13.1",
+    "gatsby-remark-images": "^7.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-remark": "^6.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "react-icons": "^5.2.1",
-    "framer-motion": "^11.2.10"
+    "react-icons": "^5.2.1"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",

@@ -71,6 +71,8 @@ const Footer = () => {
             <li><Link to="/berita" className="hover:text-sun">Berita</Link></li>
             <li><Link to="/galeri" className="hover:text-sun">Galeri</Link></li>
             <li><Link to="/prestasi" className="hover:text-sun">Prestasi</Link></li>
+            <li><Link to="/buku-tamu/dinas" className="hover:text-sun">Buku Tamu Dinas</Link></li>
+            <li><Link to="/buku-tamu/umum" className="hover:text-sun">Buku Tamu Umum</Link></li>
           </ul>
         </div>
 

@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Fungsi serverless untuk Buku Tamu (data disimpan di Netlify Blobs).
+[functions]
+  directory = "netlify/functions"
+
 # Header keamanan (duplikat dari static/_headers agar tetap berlaku
 # meskipun file _headers tidak ter-copy oleh sebagian setup build).
 [[headers]]

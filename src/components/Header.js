@@ -11,6 +11,11 @@ const profilLinks = [
   { to: "/guru-staff", label: "Guru & Staf" },
 ]
 
+const bukuTamuLinks = [
+  { to: "/buku-tamu/dinas", label: "Buku Tamu Dinas" },
+  { to: "/buku-tamu/umum", label: "Buku Tamu Umum" },
+]
+
 const navLinks = [
   { to: "/", label: "Beranda" },
   { to: "/profil", label: "Profil", dropdown: profilLinks },
@@ -18,6 +23,7 @@ const navLinks = [
   { to: "/galeri", label: "Galeri" },
   { to: "/ekstrakurikuler", label: "Ekstrakurikuler" },
   { to: "/prestasi", label: "Prestasi" },
+  { to: "/buku-tamu", label: "Buku Tamu", dropdown: bukuTamuLinks, partial: true },
   { to: "/kontak", label: "Kontak" },
 ]
 
@@ -66,8 +72,9 @@ const Header = () => {
             <div key={item.to} className="relative group">
               <Link
                 to={item.to}
-                className="px-4 py-2 rounded-full font-body font-semibold text-sm text-ink/80 hover:text-merah hover:bg-merah-light flex items-center gap-1 transition-colors"
+                className="px-3 xl:px-4 py-2 rounded-full font-body font-semibold text-sm text-ink/80 hover:text-merah hover:bg-merah-light flex items-center gap-1 transition-colors"
                 activeClassName="text-merah bg-merah-light"
+                partiallyActive={!!item.partial}
               >
                 {item.label}
                 {item.dropdown && <HiChevronDown className="text-xs" aria-hidden="true" />}
