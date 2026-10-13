@@ -13,7 +13,7 @@ import { getStore } from "@netlify/blobs"
 import { createHash, randomUUID, timingSafeEqual } from "node:crypto"
 
 const KATEGORI = ["dinas", "umum"]
-const MAKS = { nama: 100, jabatan: 100, sasaran: 150, masalah: 1000, saran: 1000 }
+const MAKS = { nama: 100, jabatan: 100, telepon: 20, sasaran: 150, masalah: 1000, saran: 1000 }
 const MAKS_TTD = 90000 // karakter data-URL tanda tangan (PNG kecil, biasanya 3–10 KB)
 const MAKS_LIMIT = 50
 const MAKS_POST_PER_JAM = 8 // per alamat IP (di-hash), per kategori
@@ -52,6 +52,18 @@ const tandaTanganValid = (ttd) => {
   return header.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))
 }
 
+// Nomor telepon/WA: sisakan angka dan tanda + di awal, wajib 9–15 digit.
+const rapikanTelepon = (nilai) => {
+  const mentah = String(nilai ?? "").trim()
+  const awal = mentah.startsWith("+") ? "+" : ""
+  return (awal + mentah.replace(/\D/g, "")).slice(0, MAKS.telepon)
+}
+const teleponValid = (t) => /^\+?\d{9,15}$/.test(t)
+
+// Nomor lengkap hanya disimpan di server; tampilan publik disamarkan (0812****345).
+const samarkanTelepon = (t) =>
+  t && t.length >= 8 ? t.slice(0, 4) + "*".repeat(t.length - 7) + t.slice(-3) : t ? "***" : ""
+
 const sha256 = (teks) => createHash("sha256").update(teks).digest()
 
 const adminSah = (req) => {
@@ -80,11 +92,17 @@ export default async (req, context) => {
     blobs.sort((a, b) => (a.key < b.key ? -1 : 1)) // kunci terbalik waktu => terbaru dulu
     const total = blobs.length
 
+    const admin = adminSah(req) // admin (Bearer ADMIN_TOKEN) melihat nomor lengkap
     const items = (
       await Promise.all(
         blobs.slice(offset, offset + limit).map(async (b) => {
           const data = await store.get(b.key, { type: "json" })
-          return data ? { id: b.key, ...data } : null
+          if (!data) return null
+          return {
+            id: b.key,
+            ...data,
+            telepon: admin ? data.telepon || "" : samarkanTelepon(data.telepon),
+          }
         })
       )
     ).filter(Boolean)
@@ -110,6 +128,7 @@ export default async (req, context) => {
     const entri = {
       nama: bersihkan(body.nama, MAKS.nama),
       jabatan: bersihkan(body.jabatan, MAKS.jabatan),
+      telepon: rapikanTelepon(body.telepon),
       sasaran: bersihkan(body.sasaran, MAKS.sasaran),
       masalah: bersihkan(body.masalah, MAKS.masalah),
       saran: bersihkan(body.saran, MAKS.saran),
@@ -117,6 +136,9 @@ export default async (req, context) => {
 
     if (entri.nama.length < 3) return json({ error: "Nama minimal 3 karakter." }, 400)
     if (entri.jabatan.length < 2) return json({ error: "Jabatan wajib diisi." }, 400)
+    if (!teleponValid(entri.telepon)) {
+      return json({ error: "Nomor telepon/WA tidak valid (9–15 digit)." }, 400)
+    }
     if (entri.sasaran.length < 2) return json({ error: "Sasaran wajib diisi." }, 400)
     if (!tandaTanganValid(body.tandaTangan)) {
       return json({ error: "Tanda tangan wajib diisi." }, 400)
@@ -142,7 +164,10 @@ export default async (req, context) => {
     }
     await store.setJSON(id, tersimpan)
 
-    return json({ ok: true, item: { id, ...tersimpan } }, 201)
+    return json(
+      { ok: true, item: { id, ...tersimpan, telepon: samarkanTelepon(tersimpan.telepon) } },
+      201
+    )
   }
 
   // ---------- DELETE: moderasi oleh admin ----------

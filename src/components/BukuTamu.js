@@ -5,7 +5,7 @@ import { HiOutlinePencilAlt, HiOutlineRefresh } from "react-icons/hi"
 const ENDPOINT = "/.netlify/functions/buku-tamu"
 const HALAMAN = 20
 
-const kosong = { nama: "", jabatan: "", sasaran: "", masalah: "", saran: "", website: "" }
+const kosong = { nama: "", jabatan: "", telepon: "", sasaran: "", masalah: "", saran: "", website: "" }
 
 const hariIniWIB = () =>
   new Intl.DateTimeFormat("id-ID", {
@@ -73,6 +73,8 @@ const BukuTamu = ({ kategori, judul }) => {
     const next = {}
     if (form.nama.trim().length < 3) next.nama = "Nama minimal 3 karakter."
     if (form.jabatan.trim().length < 2) next.jabatan = "Jabatan wajib diisi."
+    if (!/^\+?\d{9,15}$/.test(form.telepon.replace(/[\s().-]/g, "")))
+      next.telepon = "Nomor telepon/WA tidak valid (9–15 digit, contoh 081234567890)."
     if (form.sasaran.trim().length < 2) next.sasaran = "Sasaran wajib diisi."
     if (!tandaTangan) next.tandaTangan = "Tanda tangan wajib diisi."
     setErrors(next)
@@ -108,7 +110,7 @@ const BukuTamu = ({ kategori, judul }) => {
     }
   }
 
-  const field = (name, label, { rows, maxLength, required, placeholder } = {}) => {
+  const field = (name, label, { rows, maxLength, required, placeholder, hint, ...extra } = {}) => {
     const Tag = rows ? "textarea" : "input"
     return (
       <div>
@@ -127,7 +129,9 @@ const BukuTamu = ({ kategori, judul }) => {
           aria-invalid={!!errors[name]}
           aria-describedby={errors[name] ? `err-${kategori}-${name}` : undefined}
           {...(!rows && { type: "text" })}
+          {...extra}
         />
+        {hint && !errors[name] && <p className="text-xs text-ink/50 mt-1">{hint}</p>}
         {errors[name] && (
           <p id={`err-${kategori}-${name}`} className="text-merah text-xs mt-1">
             {errors[name]}
@@ -163,6 +167,14 @@ const BukuTamu = ({ kategori, judul }) => {
 
         {field("nama", "Nama", { maxLength: 100, required: true })}
         {field("jabatan", "Jabatan", { maxLength: 100, required: true })}
+        {field("telepon", "No. Telepon / WhatsApp", {
+          maxLength: 20,
+          required: true,
+          placeholder: "08xxxxxxxxxx",
+          inputMode: "tel",
+          autoComplete: "tel",
+          hint: "Pada tabel publik nomor ini disamarkan (contoh: 0812****345).",
+        })}
         {field("sasaran", "Sasaran", {
           maxLength: 150,
           required: true,
@@ -231,11 +243,11 @@ const BukuTamu = ({ kategori, judul }) => {
         </div>
 
         <div className="rounded-card border border-ink/10 bg-paper shadow-card overflow-x-auto">
-          <table className="w-full min-w-[960px] text-sm text-left">
+          <table className="w-full min-w-[1080px] text-sm text-left">
             <caption className="sr-only">Daftar {judul} SD Negeri Sukasari 5</caption>
             <thead className="bg-ink text-chalk font-display">
               <tr>
-                {["No", "Hari / Tanggal", "Nama", "Jabatan", "Sasaran", "Masalah", "Saran-saran", "Tanda Tangan"].map(
+                {["No", "Hari / Tanggal", "Nama", "Jabatan", "No. Telepon / WA", "Sasaran", "Masalah", "Saran-saran", "Tanda Tangan"].map(
                   (h) => (
                     <th key={h} scope="col" className="px-4 py-3 font-medium whitespace-nowrap">
                       {h}
@@ -247,14 +259,14 @@ const BukuTamu = ({ kategori, judul }) => {
             <tbody className="divide-y divide-ink/10 align-top">
               {entri.length === 0 && !memuat && !gagalMuat && (
                 <tr>
-                  <td colSpan={8} className="px-4 py-10 text-center text-ink/50">
+                  <td colSpan={9} className="px-4 py-10 text-center text-ink/50">
                     Belum ada tamu yang mengisi. Jadilah yang pertama!
                   </td>
                 </tr>
               )}
               {gagalMuat && (
                 <tr>
-                  <td colSpan={8} className="px-4 py-10 text-center text-merah">
+                  <td colSpan={9} className="px-4 py-10 text-center text-merah">
                     Data gagal dimuat. Klik “Muat ulang” untuk mencoba lagi.
                   </td>
                 </tr>
@@ -265,6 +277,7 @@ const BukuTamu = ({ kategori, judul }) => {
                   <td className="px-4 py-3 whitespace-nowrap">{e.hariTanggal}</td>
                   <td className="px-4 py-3 font-semibold text-ink break-words">{e.nama}</td>
                   <td className="px-4 py-3 break-words">{e.jabatan}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{e.telepon || "-"}</td>
                   <td className="px-4 py-3 break-words">{e.sasaran}</td>
                   <td className="px-4 py-3 whitespace-pre-wrap break-words max-w-[16rem]">{e.masalah || "-"}</td>
                   <td className="px-4 py-3 whitespace-pre-wrap break-words max-w-[16rem]">{e.saran || "-"}</td>

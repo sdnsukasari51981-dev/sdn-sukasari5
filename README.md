@@ -59,7 +59,7 @@ Menu **Buku Tamu** (`/buku-tamu`) berisi dua halaman: **Buku Tamu Dinas**
 (`/buku-tamu/dinas`) dan **Buku Tamu Umum** (`/buku-tamu/umum`). Tiap halaman
 punya form isian dan tabel publik hasil isian.
 
-Kolom: Hari/Tanggal · Nama · Jabatan · Sasaran · Masalah · Saran-saran · Tanda Tangan
+Kolom: Hari/Tanggal · Nama · Jabatan · No. Telepon/WA · Sasaran · Masalah · Saran-saran · Tanda Tangan
 (+ kolom No). Hari/Tanggal diisi otomatis oleh server (zona WIB), tanda tangan
 digambar langsung di layar (mouse/sentuh). Kolom Masalah & Saran bersifat opsional.
 
@@ -75,6 +75,11 @@ sama sehingga langsung terlihat publik.
   agar `package-lock.json` ikut diperbarui, lalu commit.
 - Perlindungan spam: honeypot, validasi sisi server, dan batas 8 kiriman/jam
   per alamat IP (disimpan sebagai hash).
+
+**Nomor telepon/WA** wajib diisi (9–15 digit). Di tabel publik nomor disamarkan
+(`0812****345`); nomor lengkap hanya tersimpan di server. Admin dapat melihat nomor
+lengkap dengan menambahkan header `Authorization: Bearer TOKEN_ANDA` pada permintaan
+`GET /.netlify/functions/buku-tamu?kategori=dinas` (butuh `ADMIN_TOKEN`, lihat bawah).
 
 **Moderasi (menghapus entri tidak pantas)**
 1. Netlify → Site settings → Environment variables → tambahkan `ADMIN_TOKEN`
